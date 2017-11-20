@@ -16,5 +16,11 @@ namespace OOP
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ClsBanking A = new ClsBanking();
+            MessageBox.Show("A.Balance = "+ A.Balance);
+        }
     }
 }
