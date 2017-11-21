@@ -35,6 +35,11 @@ namespace OOP
             }
         }
 
+        private int m_P2;
+        public int P2//唯讀屬性
+        {
+            set { m_Balance = value; }
+        }
 
     }
 }
