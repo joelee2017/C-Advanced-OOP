@@ -100,5 +100,24 @@ namespace OOP
 
             this.dataGridView2.DataSource = list;
         }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            //x 需先建立實體宣告
+            //MessageBox.Show(x[0].ToString());
+            
+            try
+            {
+                MessageBox.Show(x[10].ToString());//超出陣列長度
+            }
+            catch(IndexOutOfRangeException ex)//傳到類別ClsBanking 回傳throw
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

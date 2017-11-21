@@ -23,7 +23,7 @@ namespace OOP
                     m_Balance = value;
                 }
             }
-        }
+        }//--------------------------------------------------------------
         
         //ReadOnly Propety
         public int P1//唯讀屬性
@@ -39,6 +39,23 @@ namespace OOP
         public int P2//唯讀屬性
         {
             set { m_Balance = value; }
+        }//---------------------------------------------------------------
+
+        private int[] nums = {101, 44, 2, 3 };
+        /// <summary>
+        /// Indexer.........摘要說明
+        /// </summary>
+        /// <param name="i">i等於什麼</param>
+        /// <returns>returm.....</returns>
+        /// <exception cref="IndexOutOfRangeException">Index out of rang....</exception>
+        public int this[int i]
+        {
+            get
+            {
+                if (i < 0 || i > nums.Length - 1)
+                    throw new IndexOutOfRangeException("超標啦GG");
+                return nums[i];
+            }
         }
 
     }
