@@ -15,8 +15,10 @@ namespace OOP
         public Form1()
         {
             InitializeComponent();
+            this.tabControl1.SelectedIndex = 1;//預設分頁
         }
-        ClsBanking x;
+        ClsBanking x = new ClsBanking();
+        
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -24,7 +26,7 @@ namespace OOP
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            x = new ClsBanking();
+            //x = new ClsBanking();
             MessageBox.Show("x.Balance = "+ x.Balance);
         }
 
@@ -118,6 +120,64 @@ namespace OOP
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            
+            MessageBox.Show(x.Name);
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            x.P3 = 999;
+            MessageBox.Show(x.P3.ToString());
+        }
+
+        ClsBanking a = new ClsBanking();//宣告a 的類別
+        private void button11_Click(object sender, EventArgs e)
+        {
+            
+            a.Deposit(3000);//a使用Deposit方法
+            MessageBox.Show("a balance =" + a.Balance);//a類別 值為 1000
+
+            ClsBanking b = new ClsBanking();
+            b.Deposit(2000);
+            MessageBox.Show("b balance =" + b.Balance);
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                a.Withdraw(1000);
+                this.label3.Text = a.Balance.ToString("c2");
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("xxx");
+            x.Test();
+            x.Test(2100, 333);
+            x.Test(22);
+            x.Test("dfs");
+
+            
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            int n = x[1];
+            int n1 = x["1"];
+            MessageBox.Show(n.ToString());
+
+            //DataRow dr = new DataRow();
+            //dr[]
         }
     }
 }
